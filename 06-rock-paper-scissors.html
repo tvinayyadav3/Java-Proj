@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPS Game</title>
+</head>
+
+<body>
+  <h1>
+    <p>Rock Paper Scissors</p>
+  </h1>
+  <button onclick="
+  const randomNumber=Math.random();
+
+  let computerChoice='';
+
+      if(randomNumber>=0 && randomNumber<1/3)
+    {
+    computerChoice= 'Rock';
+    }
+    else if(randomNumber>=1/3 && randomNumber<2/3)
+    {
+    computerChoice= 'Paper';
+    }
+    else if(randomNumber>=2/3 && randomNumber<1)
+    {
+    computerChoice= 'Scissor';
+    }  
+
+    let result='';
+
+    if(computerChoice==='Rock') 
+    {
+      result='Tie';
+    }
+    else if(computerChoice==='Paper')
+    {
+      result='You Lose';
+    }
+    else if(computerChoice==='Scissor')
+    {
+      result='You won';
+    }
+
+    alert(`You chose Rock And Computers Choice is ${computerChoice} and the Result is ${result}`)
+      ">Rock <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTwPdv0_I1plpAlXHZxTGoJp02s9I8h1N-2VXSSr5A5DOGZpaDLEfI-1BL4mfce7Yp9z4&usqp=CAU"
+      alt=""></button>
+
+
+
+  <button onclick="
+
+  const randomNumber=Math.random();
+
+  let computerChoice='';
+
+  if(randomNumber>=0 && randomNumber<1/3)
+    {
+    computerChoice= 'Rock';
+    }
+    else if(randomNumber>=1/3 && randomNumber<2/3)
+    {
+    computerChoice= 'Paper';
+    }
+    else if(randomNumber>=2/3 && randomNumber<1)
+    {
+    computerChoice= 'Scissor';
+    }  
+
+    let result='';
+
+    if(computerChoice==='Rock') 
+    {
+      result='You Won';
+    }
+    else if(computerChoice==='Paper')
+    {
+      result='Tie';
+    }
+    else if(computerChoice==='Scissor')
+    {
+      result='You Lose';
+    }
+
+    alert(`You chose Paper And Computers Choice is ${computerChoice} and the Result is ${result}`)
+
+  ">Paper <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEjyMFecj1quL7X6lCiyQsga2mM53KLmwB4R-AaDP_7cUjS1ECfjim7lzlavUWqyfpfDw&usqp=CAU"></button>
+
+  <button img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTemzMtxIgZVo_Nviqtk_7iNA31fKis7gr6gyZboIN-K3iZL-wdn9omAMgXD-D39uvv67E&usqp=CAU"
+    alt="" onclick="
+
+  const randomNumber=Math.random();
+
+  let computerChoice='';
+
+  if(randomNumber>=0 && randomNumber<1/3)
+    {
+    computerChoice= 'Rock';
+    }
+    else if(randomNumber>=1/3 && randomNumber<2/3)
+    {
+    computerChoice= 'Paper';
+    }
+    else if(randomNumber>=2/3 && randomNumber<1)
+    {
+    computerChoice= 'Scissor';
+    }  
+
+    let result='';
+
+    if(computerChoice==='Rock') 
+    {
+      result='You Lose';
+    }
+    else if(computerChoice==='Paper')
+    {
+      result='You Won';
+    }
+    else if(computerChoice==='Scissor')
+    {
+      result='Tie';
+    }
+
+    alert(`You chose Scissors And Computers Choice is ${computerChoice} and the Result is ${result}`);
+   ">Scissors <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTemzMtxIgZVo_Nviqtk_7iNA31fKis7gr6gyZboIN-K3iZL-wdn9omAMgXD-D39uvv67E&usqp=CAU"
+      alt=""></button>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
