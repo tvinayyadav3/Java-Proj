@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="
+  // console.log(computerChoice());
+  playerChoice('Rock')
+  
+  
+  ">
+    Rock
+  </button>
+
+  <button onclick="
+  // computerChoice();
+  playerChoice('Paper');
+  
+  
+  
+  
+  ">Paper</button>
+
+  <button onclick="
+  // computerChoice();
+  playerChoice('Scissor');
+  
+  
+  
+  ">Scissor</button>
+
+
+  <script>
+    function playerChoice(playerMove) {
+
+      let computerMove = computerChoice();
+      let result = '';
+      if (playerMove === 'Rock') {
+        if (computerMove === 'Rock') {
+          result = 'Tie';
+        }
+        else if (computerMove === 'Paper') {
+          result = 'Lost';
+        }
+        else if (computerMove === 'Scissor') {
+          result = 'Won';
+        }
+      }
+
+
+
+      else if (playerMove === 'Paper') {
+        if (computerMove === 'Rock') {
+          result = 'Won';
+        }
+        else if (computerMove === 'Paper') {
+          result = 'Tie';
+        }
+        else if (computerMove === 'Scissor') {
+          result = 'Lost';
+        }
+      }
+
+
+      else if (playerMove === 'Scissor') {
+        if (computerMove === 'Rock') {
+          result = 'Lost';
+        }
+        else if (computerMove === 'Paper') {
+          result = 'Won';
+        }
+        else if (computerMove === 'Scissor') {
+          result = 'Tie';
+        }
+      }
+
+      alert(`Your choice is ${playerMove} and Computer choice is ${computerMove} and the result is ${result}`)
+    }
+
+
+
+
+    function computerChoice() {
+      let randomNumber = Math.random();
+      let computerChoice = '';
+      if (randomNumber >= 0 && randomNumber < 1 / 3) {
+        computerChoice = 'Rock';
+      }
+      else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+        computerChoice = 'Paper';
+      }
+      else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+        computerChoice = 'Scissor';
+      }
+
+      return computerChoice;
+
+    }
+
+
+  </script>
+</body>
+
+</html>
