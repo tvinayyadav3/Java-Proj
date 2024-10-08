@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .todo-grid , .inputEle{
+      color: red;
+      display: grid;
+      grid-template-columns: 200px 150px 100px;
+      column-gap: 10px;
+      row-gap: 10px;
+      align-items: center;
+    }
+
+    .inputEle{
+      margin-bottom: 10px;
+      align-items: stretch;
+    }
+
+    .name-input,.date-input{
+      font-size: 15px;
+      padding: 6px;
+    }
+    .date-input{
+      /* font-size: 20px; */
+    }
+
+    .todo-grid{
+      font-size: 15px;
+     
+    }
+    
+    .add-btn{
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .delete-btn{
+      background-color: darkred;
+      color: white;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>TodoList</h3>
+  <div class="inputEle">
+    <input type="text" placeholder="Todo List" class="js-name name-input">
+    <!-- change -->
+    <input type="date" class="js-date date-input">
+
+    <button onclick=todoList() class="add-btn">
+      Add</button>
+  </div>
+  <div class="js-displayName todo-grid"></div>
+  <!-- <p class="js-displayDate"></p> -->
+
+
+
+  <script>
+
+    let nameArray = [
+      {
+        name: "" ,
+        date: "" ,
+      },
+      // {
+      //   name: 'make',
+      //   date: '22-10-2019'
+      // }
+    ];
+    // let name = '';
+
+    renderTodoList();
+    function renderTodoList() {
+      let todoListHTML = '';
+
+
+      for (let i = 0; i < nameArray.length; i++) {
+        let todoObject = nameArray[i];
+        // const name=todoObject.name;
+        // const date=todoObject.date;
+        // shortcut for aboe to lines
+        const { name, date } = todoObject;
+        // console.log(todoListHTML);
+        const html = `
+          <div>${name}</div>
+          <div>${date}</div>
+           
+          <button
+          onclick="nameArray.splice(${i},1)
+          renderTodoList();
+          " class="delete-btn">Delete</button> 
+        `;
+        todoListHTML += html;
+        document.querySelector(".js-displayName").innerHTML = todoListHTML;
+        // console.log(todoListHTML);
+      }
+      // console.log(todoListHTML);
+
+    }
+    // console.log(typeof nameArray);
+
+
+    function todoList() {
+      let name = '';
+      {
+        // name = nameArray[i];
+        // console.log(name);
+        let date = '';
+        const inputElement = document.querySelector('.js-name');
+        const inputDate = document.querySelector('.js-date');
+        name = inputElement.value;
+        date = inputDate.value;
+        nameArray.push({
+          //name:name,
+          //date:date,
+          name,
+          date,
+        });
+        // nameArray.push(date);
+        console.log(nameArray);
+
+        inputElement.value = '';
+        inputDate.value = '';
+        renderTodoList();
+      }
+
+    }
+  </script>
+</body>
+
+</html>
